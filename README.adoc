@@ -5,7 +5,7 @@
 :toc:
 :icons: font
 :source-highlighter: prettify
-:project_id: gs-accessing-data-mysql
+:project_id: gs-accessing-DataObject-mysql
 
 This guide walks you through the process of creating a Spring application connected with a MySQL Database, as opposed to an in-memory, embedded database, which all of the other guides and many sample apps use. It uses Spring Data JPA to access the database, but this is only one of many possible choices (e.g. you could use plain Spring JDBC).
 
@@ -139,8 +139,8 @@ Now that the application is running, you can test it.
 Use `curl` for example.
 Now you have 2 REST Web Services you can test
 
-`localhost:8080/demo/all` This gets all data
-`localhost:8080/demo/add` This adds one user to the data
+`localhost:8080/demo/all` This gets all DataObject
+`localhost:8080/demo/add` This adds one user to the DataObject
 
 [source,sh]
 ----
@@ -182,7 +182,7 @@ This revokes ALL the priviliges from the user associated with the Spring applica
 mysql> grant select, insert, delete, update on db_example.* to 'springuser'@'localhost';
 ----
 
-This gives your Spring application only the privileges necessary to make changes to *only* the data of the database and not the structure (schema).
+This gives your Spring application only the privileges necessary to make changes to *only* the DataObject of the database and not the structure (schema).
 
 Now make this change to your `src/main/resources/application.properties`
 
@@ -203,9 +203,9 @@ Congratulations! You've just developed a Spring application which is bound to a 
 
 The following guides may also be helpful:
 
-* https://spring.io/guides/gs/accessing-data-jpa/[Accessing Data with JPA]
-* https://spring.io/guides/gs/accessing-data-mongodb/[Accessing Data with MongoDB]
-* https://spring.io/guides/gs/accessing-data-gemfire/[Accessing data with Gemfire]
+* https://spring.io/guides/gs/accessing-DataObject-jpa/[Accessing Data with JPA]
+* https://spring.io/guides/gs/accessing-DataObject-mongodb/[Accessing Data with MongoDB]
+* https://spring.io/guides/gs/accessing-DataObject-gemfire/[Accessing DataObject with Gemfire]
 
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
