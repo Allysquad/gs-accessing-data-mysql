@@ -83,20 +83,20 @@ This is coming in details in the end of this guide.
 
 == Create the `@Entity` model
 
-`src/main/java/hello/User.java`
+`src/main/java/client/User.java`
 [source,java]
 ----
-include::complete/src/main/java/hello/User.java[]
+include::complete/src/main/java/client/User.java[]
 ----
 
 This is the entity class which Hibernate will automatically translate into a table.
 
 == Create the repository
 
-`src/main/java/hello/UserRepository.java`
+`src/main/java/client/UserRepository.java`
 [source,java]
 ----
-include::complete/src/main/java/hello/UserRepository.java[]
+include::complete/src/main/java/client/UserRepository.java[]
 ----
 
 This is the repository interface, this will be automatically implemented by Spring in a bean with the same name with changing case
@@ -104,10 +104,10 @@ The bean name will be `userRepository`
 
 == Create a new controller for your Spring application
 
-`src/main/java/hello/MainController.java`
+`src/main/java/client/MainController.java`
 [source,java]
 ----
-include::complete/src/main/java/hello/MainController.java[]
+include::complete/src/main/java/client/MainController.java[]
 ----
 
 NOTE: The above example does not explicitly specify `GET` vs. `PUT`, `POST`, and so forth, because `@GetMapping` is a shortcut for `@RequestMapping(method=GET)`. `@RequestMapping` maps all HTTP operations by default. Use `@RequestMapping(method=GET)` or https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/package-summary.html[other shortcut annotations] to narrow this mapping.
@@ -118,10 +118,10 @@ NOTE: The above example does not explicitly specify `GET` vs. `PUT`, `POST`, and
 Although it is possible to package this service as a traditional link:/understanding/WAR[WAR] file for deployment to an external application server, the simpler approach demonstrated below creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
 
 
-`src/main/java/hello/Application.java`
+`src/main/java/client/Application.java`
 [source,java]
 ----
-include::complete/src/main/java/hello/Application.java[]
+include::complete/src/main/java/client/Application.java[]
 ----
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/build_an_executable_jar_subhead.adoc[]
